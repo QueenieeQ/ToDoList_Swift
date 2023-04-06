@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct AddView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var listViewModel: ListViewModel
     @State var textFieldText: String = ""
+    
+    @State var showAlert: Bool = false
+    @State var alertTitle: String =  ""
     var body: some View {
         ScrollView{
 //            Text(" Hi there")
@@ -22,9 +26,8 @@ struct AddView: View {
 )
                     .cornerRadius(10)
                 
-                Button(action: {
-                    
-                }, label: {
+                Button(action: saveButtonPress
+                       , label: {
                     Text("Save".uppercased())
                         .foregroundColor(.white)
                         .font(.headline)
@@ -39,7 +42,30 @@ struct AddView: View {
 //            colorliteral is deprecated
         }
         .navigationTitle("Add task 🖋️")
+        .alert(
+            isPresented: $showAlert,
+            content: getAlert
+        )
     }
+    func saveButtonPress(){
+        if textIsGood() == true {
+            listViewModel.addItem(title: textFieldText)
+            presentationMode.wrappedValue.dismiss()
+
+        }
+    }
+    func textIsGood() -> Bool{
+        if textFieldText.count < 5 {
+            alertTitle = "Your new to do things need to be 5 character long  🤨"
+            showAlert.toggle()
+            return false
+        }
+            return true
+    }
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
+    }
+
 }
 
 struct AddView_Previews: PreviewProvider {
@@ -47,6 +73,7 @@ struct AddView_Previews: PreviewProvider {
         NavigationView(){
             AddView()
         }
+        .environmentObject(ListViewModel())
         
     }
 }
