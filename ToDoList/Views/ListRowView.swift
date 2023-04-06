@@ -22,6 +22,7 @@ struct ListRowView: View {
     }
 }
 // no idea why this code base not running in previous project
+// f... broken swiftui preview
 struct ListRowView_Previews: PreviewProvider {
     static var previews: some View {
         ListRowView(

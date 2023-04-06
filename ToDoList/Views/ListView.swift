@@ -33,9 +33,9 @@ struct ListView: View {
             trailing:
 //                link button to another screen
 //            very like intent android
-            NavigationLink("Add", destination:
-                            Text("Destination")
-                          )
+            NavigationLink("Add",
+                           destination: AddView())
+                    
         )
 //         this is will be not avaiable in next version of ios
     }

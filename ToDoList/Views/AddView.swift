@@ -18,8 +18,21 @@ struct AddView: View {
                     .padding(.horizontal)
                     .frame(height: 55)
 //                  .background(Color(Literal))
-                    .background(Color(UIColor(red: 1, green: 0.9843, blue: 0.9373, alpha: 1.0) /* #fffbef */))
+                    .background(Color(UIColor(red: 0.9098, green: 0.9098, blue: 0.9098, alpha: 1.0)) /* #e8e8e8 */
+)
                     .cornerRadius(10)
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Save".uppercased())
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.accentColor)
+                        .cornerRadius(10)
+                })
 
             }
             .padding(16)
