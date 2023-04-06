@@ -7,32 +7,35 @@
 
 import SwiftUI
 
+
 struct ListView: View {
-    
+    @EnvironmentObject var listViewModel:ListViewModel
     @State var items: [ItemModel] = [
 //    "This is the first title",
 //    "This is the second title",
 //    "And this tis the third "
+//        background data
         ItemModel(title: "This is the first line", isCompleted: false),
-        ItemModel(title: "This is the second line", isCompleted: false),
+        ItemModel(title: "This is the second line", isCompleted: true),
         ItemModel(title: "Third", isCompleted: false)
         
     ]
+//    line below is view
     var body: some View {
         
         List{
-//            Text("Hi this is list view")
-//            ListRowView(title: "This is the first title!")
-            ForEach( items) { item in
-                Text("Hi")
+
+            ForEach( listViewModel.items) { item in
+                ListRowView(item: item)
 //                    ListRowView(title: item)
-                }
+            }
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem)
+            
 //            list start little lower on screen because we have room for navigation bar in navigation view
         }
         .listStyle(PlainListStyle())
-//         change style of list
-//        .listStyle(SidebarListStyle())
-        .navigationTitle("ToDo List 😘")
+        .navigationTitle("ToDo List 🗒️")
         .navigationBarItems(
             leading: EditButton(),
             trailing:
@@ -44,7 +47,9 @@ struct ListView: View {
         )
 //         this is will be not avaiable in next version of ios
     }
+    
 }
+
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {

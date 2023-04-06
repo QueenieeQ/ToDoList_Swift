@@ -18,12 +18,17 @@ import SwiftUI
 
 @main
 struct ToDoListApp: App {
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
+    
     var body: some Scene {
         WindowGroup {
             NavigationView(){
                 ListView()
                 //            entire app is always in a navigation view
             }
+//            do this to make every view can have access to listViewModel
+            .environmentObject(listViewModel)
         }
     }
 }
