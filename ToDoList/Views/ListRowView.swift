@@ -21,6 +21,7 @@ struct ListRowView: View {
         }
     }
 }
+// no idea why this code base not running in previous project
 struct ListRowView_Previews: PreviewProvider {
     static var previews: some View {
         ListRowView(
