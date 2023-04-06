@@ -9,18 +9,23 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [String] = [
-    "This is the first title",
-    "This is the second title",
-    "And this tis the third "
+    @State var items: [ItemModel] = [
+//    "This is the first title",
+//    "This is the second title",
+//    "And this tis the third "
+        ItemModel(title: "This is the first line", isCompleted: false),
+        ItemModel(title: "This is the second line", isCompleted: false),
+        ItemModel(title: "Third", isCompleted: false)
+        
     ]
     var body: some View {
         
         List{
 //            Text("Hi this is list view")
 //            ListRowView(title: "This is the first title!")
-            ForEach( items, id: \.self) { item in
-                    ListRowView(title: item)
+            ForEach( items) { item in
+                Text("Hi")
+//                    ListRowView(title: item)
                 }
 //            list start little lower on screen because we have room for navigation bar in navigation view
         }
