@@ -8,13 +8,47 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @State var items: [String] = [
+    "This is the first title",
+    "This is the second title",
+    "And this tis the third "
+    ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List{
+//            Text("Hi this is list view")
+//            ListRowView(title: "This is the first title!")
+            ForEach( items, id: \.self) { item in
+                    ListRowView(title: item)
+                }
+//            list start little lower on screen because we have room for navigation bar in navigation view
+        }
+        .listStyle(PlainListStyle())
+//         change style of list
+//        .listStyle(SidebarListStyle())
+        .navigationTitle("ToDo List 😘")
+        .navigationBarItems(
+            leading: EditButton(),
+            trailing:
+//                link button to another screen
+//            very like intent android
+            NavigationLink("Add", destination:
+                            Text("Destination")
+                          )
+        )
+//         this is will be not avaiable in next version of ios
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        NavigationView{
+            ListView()
+        }
+        
     }
 }
+// extract listview hstack
+// create this for use multiple time after
+

@@ -20,7 +20,6 @@ import SwiftUI
 struct ToDoListApp: App {
     var body: some Scene {
         WindowGroup {
-            
             NavigationView(){
                 ListView()
                 //            entire app is always in a navigation view
