@@ -9,22 +9,10 @@ import SwiftUI
 
 
 struct ListView: View {
-    @EnvironmentObject var listViewModel:ListViewModel
-    @State var items: [ItemModel] = [
-//    "This is the first title",
-//    "This is the second title",
-//    "And this tis the third "
-//        background data
-        ItemModel(title: "This is the first line", isCompleted: false),
-        ItemModel(title: "This is the second line", isCompleted: true),
-        ItemModel(title: "Third", isCompleted: false)
-        
-    ]
-//    line below is view
+    @EnvironmentObject var listViewModel: ListViewModel
+    //    line below is view
     var body: some View {
-        
         List{
-
             ForEach( listViewModel.items) { item in
                 ListRowView(item: item)
 //                    ListRowView(title: item)
@@ -56,6 +44,8 @@ struct ListView_Previews: PreviewProvider {
         NavigationView{
             ListView()
         }
+//         important line
+        .environmentObject(ListViewModel())
         
     }
 }
