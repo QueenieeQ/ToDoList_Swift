@@ -27,6 +27,7 @@ struct ToDoListApp: App {
                 ListView()
                 //            entire app is always in a navigation view
             }
+            .navigationViewStyle(StackNavigationViewStyle())
 //            do this to make every view can have access to listViewModel
             .environmentObject(listViewModel)
         }

@@ -22,8 +22,9 @@ struct AddView: View {
                     .padding(.horizontal)
                     .frame(height: 55)
 //                  .background(Color(Literal))
-                    .background(Color(UIColor(red: 0.9098, green: 0.9098, blue: 0.9098, alpha: 1.0)) /* #e8e8e8 */
-)
+//                    .background(Color(UIColor(red: 0.9098, green: 0.9098, blue: 0.9098, alpha: 1.0)) /* #e8e8e8 */
+                    .background(Color(UIColor.secondarySystemBackground)
+                )
                     .cornerRadius(10)
                 
                 Button(action: saveButtonPress
@@ -35,6 +36,7 @@ struct AddView: View {
                         .frame(maxWidth: .infinity)
                         .background(Color.accentColor)
                         .cornerRadius(10)
+                        .padding(.top, 10)
                 })
 
             }
