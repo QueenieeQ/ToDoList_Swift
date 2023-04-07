@@ -22,14 +22,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ninh Xuân Quý" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C58-Fe-vyT">
-                                <rect key="frame" x="82" y="518" width="229" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ops-oN-IaT">
-                                <rect key="frame" x="121" y="350.33333333333331" width="150" height="151.33333333333331"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ops-oN-IaT">
+                                <rect key="frame" x="121.66666666666669" y="352" width="150" height="148.66666666666669"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="lVA-BF-SUe"/>
@@ -42,16 +36,9 @@
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
                             <constraint firstItem="Ops-oN-IaT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FWu-Rl-Xyv"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="C58-Fe-vyT" secondAttribute="trailing" constant="170" id="Jwx-Cp-A5h"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstItem="C58-Fe-vyT" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="170" id="TvO-7c-eck"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
                             <constraint firstItem="Ops-oN-IaT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="auQ-oo-5aO"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="C58-Fe-vyT" secondAttribute="trailing" constant="170" id="cVT-OK-PVY"/>
-                            <constraint firstItem="C58-Fe-vyT" firstAttribute="top" secondItem="Ops-oN-IaT" secondAttribute="bottom" constant="16" id="ktU-fb-DoX"/>
-                            <constraint firstItem="C58-Fe-vyT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nE6-1T-wQL"/>
-                            <constraint firstItem="C58-Fe-vyT" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="170" id="po4-cc-uWB"/>
-                            <constraint firstItem="C58-Fe-vyT" firstAttribute="top" secondItem="Ops-oN-IaT" secondAttribute="bottom" constant="8" id="utl-mY-aGu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -61,9 +48,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.5899999737739563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
