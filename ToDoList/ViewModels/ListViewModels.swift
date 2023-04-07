@@ -8,15 +8,21 @@
 import Foundation
 // environment object 
 class ListViewModel: ObservableObject {
-    @Published var items: [ItemModel] = []
+    @Published var items: [ItemModel] = []{
+        didSet{
+//            everytime items array didset get called
+            saveItems()
+        }
+    }
+    let itemsKey: String = "items_key"
 //     published is property wrapper
     init() {
         getItems()
     }
     
     func getItems() {
-        let newItems = [
-            ItemModel(title: "This is the first line",
+/*         let newItems = [
+           ItemModel(title: "This is the first line",
                       isCompleted: false),
             ItemModel(title: "This is the second line",
                       isCompleted: true),
@@ -25,12 +31,22 @@ class ListViewModel: ObservableObject {
         ]
 //        append newItems to ItemModel array
         items.append(contentsOf: newItems)
+ */
+//        use guard to make sure data is saved
+        guard
+            let data = UserDefaults.standard.data(forKey: itemsKey)
+        else {return}
+        guard
+            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else { return}
+        self.items = savedItems
     }
     
     func deleteItem(indexSet: IndexSet){
         items.remove(
             atOffsets: indexSet
         )
+//        saveItems()
     }
     func moveItem(
         from: IndexSet,
@@ -54,5 +70,17 @@ class ListViewModel: ObservableObject {
                    items[index] = item.updateCompeletion()
                }
     }
+//    use userDefault to save a small piece of data
+//    core data is use for bigger database like a thoundsand of line
+    func saveItems(){
+//        try to encode data from array to json to put in user default
+        if let encodeData = try? JSONEncoder().encode(items){
+//
+            UserDefaults.standard.set(encodeData, forKey: itemsKey)
+            
+        }
+        
+    }
+    
 
 }

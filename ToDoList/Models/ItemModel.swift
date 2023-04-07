@@ -6,7 +6,7 @@
 //
 // inmutable struc
 import Foundation
-struct ItemModel: Identifiable {
+struct ItemModel: Identifiable, Codable {
     let id: String
 //     create unique id
     let title: String
