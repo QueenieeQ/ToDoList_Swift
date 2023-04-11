@@ -1,5 +1,14 @@
 #  ToDo List
 
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/QueenieeQ/ToDoList_Swift/main/ToDoList/check%20ToDo_List.png" alt="ToDoList" width="200">
+  <br>ToDo List<br>
+</h1>
+
+## Preview
+
+![Alt Text](https://raw.githubusercontent.com/QueenieeQ/ToDoList_Swift/main/ToDoList/preview_app_ios.gif)
+
 ## Require
 - Ios 13+
 - Xcode 12+
