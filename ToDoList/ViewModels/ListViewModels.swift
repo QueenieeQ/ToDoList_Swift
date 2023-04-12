@@ -19,6 +19,7 @@ class ListViewModel: ObservableObject {
     init() {
         getItems()
     }
+//    commit something
     
     func getItems() {
 /*         let newItems = [
