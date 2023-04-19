@@ -18,7 +18,7 @@
 
 ## Require
 - Ios 13+
-- Xcode 12+
+- Xcode 11+
 ## Installation
 Clone this project
 
